@@ -18,7 +18,7 @@ export default function Processes() {
       className="space-y-12 pb-20"
     >
       {/* Header */}
-      <header className="relative py-12 px-8 rounded-[3rem] bg-zinc-900/40 border border-white/5 overflow-hidden">
+      <header className="relative py-8 md:py-12 px-5 md:px-8 rounded-3xl md:rounded-[3rem] bg-zinc-900/40 border border-white/5 overflow-hidden">
         <div className="absolute top-0 right-0 p-8 opacity-5 pointer-events-none">
           <Activity size={180} />
         </div>
@@ -27,8 +27,8 @@ export default function Processes() {
             <ShieldCheck size={12} />
             Protocolo 311
           </div>
-          <h1 className="text-4xl font-bold tracking-tight mb-4">Estatus - Razón de Proceso</h1>
-          <p className="text-zinc-500 text-lg font-light max-w-2xl leading-relaxed">
+          <h1 className="text-3xl md:text-4xl font-bold tracking-tight mb-4">Estatus - Razón de Proceso</h1>
+          <p className="text-zinc-500 text-base md:text-lg font-light max-w-2xl leading-relaxed">
             Conoce el flujo operativo y los tiempos de respuesta establecidos para garantizar una atención ciudadana de excelencia.
           </p>
         </div>
@@ -79,7 +79,7 @@ export default function Processes() {
             transition={{ delay: index * 0.1 }}
             viewport={{ once: true }}
             className={cn(
-              "p-8 rounded-[2.5rem] border flex flex-col gap-6 transition-all hover:scale-[1.02]",
+              "p-6 md:p-8 rounded-3xl md:rounded-[2.5rem] border flex flex-col gap-6 transition-all hover:scale-[1.02]",
               reason.color === 'emerald' ? "bg-emerald-500/5 border-emerald-500/20" :
               reason.color === 'amber' ? "bg-amber-500/5 border-amber-500/20" :
               "bg-red-500/5 border-red-500/20"
@@ -116,15 +116,45 @@ export default function Processes() {
       </section>
 
       {/* Recent Cases Table/List */}
-      <section className="bg-zinc-900/40 border border-white/5 rounded-[3rem] p-10">
-        <div className="flex items-center justify-between mb-10">
+      <section className="bg-zinc-900/40 border border-white/5 rounded-3xl md:rounded-[3rem] p-6 md:p-10">
+        <div className="flex items-center justify-between mb-8 md:mb-10">
           <div>
-            <h2 className="text-2xl font-bold">Casos Recientes en Proceso</h2>
-            <p className="text-sm text-zinc-500">Listado de requerimientos activos en el sistema.</p>
+            <h2 className="text-xl md:text-2xl font-bold">Casos Recientes en Proceso</h2>
+            <p className="text-xs md:text-sm text-zinc-500">Listado de requerimientos activos en el sistema.</p>
           </div>
         </div>
 
-        <div className="overflow-x-auto">
+        {/* Mobile View: Cards */}
+        <div className="md:hidden space-y-4">
+          {REAL_CASES.map((c) => (
+            <div 
+              key={c.id} 
+              onClick={() => setSelectedCase(c)}
+              className="bg-zinc-900/60 border border-white/5 rounded-2xl p-5 space-y-4 active:scale-[0.98] transition-transform"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs font-mono text-blue-400">{c.id}</span>
+                <span className="px-2 py-0.5 rounded-full bg-amber-500/10 border border-amber-500/20 text-amber-400 text-[9px] font-bold uppercase tracking-widest">
+                  {c.razon_estatus}
+                </span>
+              </div>
+              <div>
+                <div className="text-sm font-bold text-white mb-0.5">{c.service}</div>
+                <div className="text-[10px] text-zinc-500">{c.type} • {c.date}</div>
+              </div>
+              <div className="flex items-center justify-between pt-2 border-t border-white/5">
+                <div className="flex items-center gap-2 text-[10px] text-zinc-400">
+                  <MapPin size={10} />
+                  {c.location}
+                </div>
+                <ArrowRight size={14} className="text-zinc-600" />
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* Desktop View: Table */}
+        <div className="hidden md:block overflow-x-auto">
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="border-b border-white/5">
@@ -182,15 +212,15 @@ export default function Processes() {
               className="relative w-full max-w-4xl bg-zinc-900 border border-white/10 rounded-[2.5rem] shadow-2xl overflow-hidden flex flex-col max-h-[90vh]"
             >
               {/* Modal Header */}
-              <div className="p-8 border-b border-white/5 flex items-center justify-between bg-zinc-900/50">
+              <div className="p-6 md:p-8 border-b border-white/5 flex items-center justify-between bg-zinc-900/50">
                 <div>
                   <div className="flex items-center gap-3 mb-2">
                     <span className="px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-[10px] font-bold uppercase tracking-widest">
                       {selectedCase.type}
                     </span>
-                    <span className="text-xs font-mono text-zinc-500">{selectedCase.id}</span>
+                    <span className="text-[10px] font-mono text-zinc-500">{selectedCase.id}</span>
                   </div>
-                  <h2 className="text-2xl font-bold tracking-tight">{selectedCase.service}</h2>
+                  <h2 className="text-xl md:text-2xl font-bold tracking-tight">{selectedCase.service}</h2>
                 </div>
                 <button 
                   onClick={() => setSelectedCase(null)}
@@ -201,7 +231,7 @@ export default function Processes() {
               </div>
 
               {/* Modal Content */}
-              <div className="flex-1 overflow-y-auto p-8 space-y-8">
+              <div className="flex-1 overflow-y-auto p-6 md:p-8 space-y-8">
                 {/* Info Grid */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-6">
