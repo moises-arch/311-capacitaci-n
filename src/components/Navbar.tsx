@@ -4,12 +4,12 @@ import { cn } from '../lib/utils';
 
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
-  { to: '/signup', icon: UserPlus, label: 'Registrar' },
   { to: '/processes', icon: GitBranch, label: 'Estatus' },
   { to: '/playground', icon: Gamepad2, label: 'Playground' },
   { to: '/feedback', icon: MessageSquare, label: 'Buzón' },
   { to: '/resources', icon: FileDown, label: 'Recursos' },
-  { to: '/qr', icon: QrCode, label: 'QR' },
+  { to: '/signup', icon: UserPlus, label: '' },
+  { to: '/qr', icon: QrCode, label: '' },
   { to: '/admin', icon: Lock, label: '' },
 ];
 
@@ -31,8 +31,8 @@ export default function Navbar() {
                 )
               }
             >
-              <Icon className="w-5 h-5" />
-              <span>{label}</span>
+              <Icon className="w-5 h-5 flex-shrink-0" />
+              {label && <span>{label}</span>}
             </NavLink>
           ))}
         </div>
