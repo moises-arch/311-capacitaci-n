@@ -21,6 +21,14 @@ const STATIC_RESOURCES: Resource[] = [
     type: 'presentation',
     file_url: '/presentacion-estandar-311.pdf',
     created_at: new Date().toISOString()
+  },
+  {
+    id: '3',
+    title: 'Resumen de Gestión Institucional 2026',
+    description: 'Reporte ejecutivo consolidado con indicadores clave (KPIs), satisfacción ciudadana y estadísticas de atención por sector.',
+    type: 'document',
+    file_url: '/reporte-gestion-institucional.png',
+    created_at: new Date().toISOString()
   }
 ];
 
