@@ -186,14 +186,7 @@ export default function Signup({ onSuccess }: { onSuccess: () => void }) {
               </button>
             </form>
 
-            {/* Hidden Skip Button for Admin/Testing */}
-            <button 
-              onClick={onSuccess}
-              className="mt-8 w-full py-2 text-zinc-700/40 hover:text-blue-500/60 transition-colors cursor-pointer select-none text-[9px] uppercase tracking-[0.3em] font-medium"
-              aria-hidden="true"
-            >
-              Acceso Directo • Admin
-            </button>
+            {/* Admin link removed */}
           </motion.div>
         ) : (
           <motion.div

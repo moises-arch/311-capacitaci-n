@@ -9,6 +9,7 @@ import Playground from './pages/Playground';
 import Resources from './pages/Resources';
 import QRManager from './pages/QRManager';
 import Navbar from './components/Navbar';
+import Footer from './components/Footer';
 import { motion, AnimatePresence } from 'motion/react';
 
 export default function App() {
@@ -71,6 +72,7 @@ export default function App() {
               />
             </Routes>
           </AnimatePresence>
+          <Footer />
         </main>
       </div>
     </Router>
