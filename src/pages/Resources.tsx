@@ -13,6 +13,14 @@ const STATIC_RESOURCES: Resource[] = [
     type: 'document',
     file_url: '/procesos-razon-status.png',
     created_at: new Date().toISOString()
+  },
+  {
+    id: '2',
+    title: 'Presentación Estratégica 2026',
+    description: 'Documento detallado sobre los objetivos estratégicos, KPIs y visión institucional para la modernización del sistema 311 durante el presente año.',
+    type: 'presentation',
+    file_url: '/presentacion-estandar-311.pdf',
+    created_at: new Date().toISOString()
   }
 ];
 
