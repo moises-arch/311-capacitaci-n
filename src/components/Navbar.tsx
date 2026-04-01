@@ -1,9 +1,10 @@
 import { NavLink } from 'react-router-dom';
-import { LayoutDashboard, GitBranch, MessageSquare, FileDown, QrCode, Lock, Gamepad2 } from 'lucide-react';
+import { LayoutDashboard, GitBranch, MessageSquare, FileDown, QrCode, Lock, Gamepad2, UserPlus } from 'lucide-react';
 import { cn } from '../lib/utils';
 
 const navItems = [
   { to: '/dashboard', icon: LayoutDashboard, label: 'Dashboard' },
+  { to: '/signup', icon: UserPlus, label: 'Registrar' },
   { to: '/processes', icon: GitBranch, label: 'Estatus' },
   { to: '/playground', icon: Gamepad2, label: 'Playground' },
   { to: '/feedback', icon: MessageSquare, label: 'Buzón' },

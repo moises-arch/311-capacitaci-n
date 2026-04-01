@@ -37,9 +37,7 @@ export default function App() {
               />
               <Route 
                 path="/signup" 
-                element={
-                  isRegistered ? <Navigate to="/dashboard" replace /> : <Signup onSuccess={handleRegistrationSuccess} />
-                } 
+                element={<Signup onSuccess={handleRegistrationSuccess} />} 
               />
               
               {/* Protected Routes (Simulated) */}
