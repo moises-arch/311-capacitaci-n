@@ -8,26 +8,18 @@ import { Resource } from '../types';
 const STATIC_RESOURCES: Resource[] = [
   {
     id: '1',
-    title: 'Manual de Procedimientos 311',
-    description: 'Guía completa sobre la gestión de casos y escalamientos en el Centro de Atención Ciudadana.',
+    title: 'Guía Visual: Razones de Estatus 311',
+    description: 'Infografía técnica sobre el ciclo de vida de los casos: Remitido (24h), En Proceso (30d) y Vencido. Esencial para el seguimiento operativo.',
     type: 'document',
-    file_url: '#',
+    file_url: '/procesos-razon-status.png',
     created_at: new Date().toISOString()
   },
   {
     id: '2',
-    title: 'Presentación Capacitación Directores',
-    description: 'Material visual utilizado durante la sesión de inducción para directores y jefes nacionales.',
+    title: 'Presentación Institucional Estándar',
+    description: 'Capacitación oficial sobre los pilares del servicio 311, flujos de atención ciudadana y estándares de calidad institucional.',
     type: 'presentation',
-    file_url: '#',
-    created_at: new Date().toISOString()
-  },
-  {
-    id: '3',
-    title: 'Protocolo de Respuesta Institucional',
-    description: 'Estándares de calidad y tiempos de respuesta para la atención de ciudadanos.',
-    type: 'document',
-    file_url: '#',
+    file_url: '/presentacion-estandar-311.pdf',
     created_at: new Date().toISOString()
   }
 ];
@@ -132,14 +124,23 @@ function ResourceCard({ resource }: { resource: Resource }) {
       </div>
 
       <div className="pt-8 mt-8 border-t border-white/5 flex items-center justify-between">
-        <div className="flex items-center gap-2 text-zinc-600">
+        <a 
+          href={resource.file_url} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="flex items-center gap-2 text-zinc-600 hover:text-blue-400 transition-colors"
+        >
           <ExternalLink size={14} />
           <span className="text-[10px] font-bold uppercase tracking-widest">Ver Online</span>
-        </div>
-        <button className="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-zinc-200 transition-all flex items-center gap-2 text-xs">
+        </a>
+        <a 
+          href={resource.file_url} 
+          download 
+          className="bg-white text-black font-bold px-6 py-3 rounded-xl hover:bg-zinc-200 transition-all flex items-center gap-2 text-xs"
+        >
           <Download size={14} />
           Descargar
-        </button>
+        </a>
       </div>
     </motion.div>
   );
