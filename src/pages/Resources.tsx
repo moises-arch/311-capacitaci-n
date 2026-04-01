@@ -13,22 +13,6 @@ const STATIC_RESOURCES: Resource[] = [
     type: 'document',
     file_url: '/procesos-razon-status.png',
     created_at: new Date().toISOString()
-  },
-  {
-    id: '2',
-    title: 'Presentación Institucional Estándar',
-    description: 'Capacitación oficial sobre los pilares del servicio 311, flujos de atención ciudadana y estándares de calidad institucional.',
-    type: 'presentation',
-    file_url: '/presentacion-estandar-311.pdf',
-    created_at: new Date().toISOString()
-  },
-  {
-    id: '3',
-    title: 'Resumen de Gestión Institucional 2026',
-    description: 'Reporte ejecutivo consolidado con indicadores clave (KPIs), satisfacción ciudadana y estadísticas de atención por sector.',
-    type: 'document',
-    file_url: '/reporte-gestion-institucional.png',
-    created_at: new Date().toISOString()
   }
 ];
 
