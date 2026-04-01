@@ -1,23 +1,15 @@
 import { createClient } from '@supabase/supabase-js';
 
 const getSupabaseClient = () => {
-  const supabaseUrl = (import.meta as any).env.VITE_SUPABASE_URL;
-  const supabaseAnonKey = (import.meta as any).env.VITE_SUPABASE_ANON_KEY;
+  // Use environment variables or fallback to the provided project values
+  const url = (import.meta as any).env.VITE_SUPABASE_URL || 'https://oowhbylgowuukmmbdlch.supabase.co';
+  const key = (import.meta as any).env.VITE_SUPABASE_ANON_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Im9vd2hieWxnb3d1dWttbWJkbGNoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg4NTM4MjQsImV4cCI6MjA4NDQyOTgyNH0.3KybEzFDCSlZCq_543nzyD_i2fiMusBpIO3zAsASJ1A';
 
-  if (!supabaseUrl || !supabaseAnonKey) {
-    // Return a proxy that throws a helpful error when any property is accessed
-    return new Proxy({} as any, {
-      get: (_, prop) => {
-        if (prop === 'then') return undefined; // For async/await compatibility
-        throw new Error(
-          'Supabase credentials (VITE_SUPABASE_URL, VITE_SUPABASE_ANON_KEY) are missing. ' +
-          'Please configure them in the Secrets panel in AI Studio.'
-        );
-      }
-    });
+  if (!url || !key) {
+    throw new Error('Supabase credentials are missing.');
   }
 
-  return createClient(supabaseUrl, supabaseAnonKey);
+  return createClient(url, key);
 };
 
 export const supabase = getSupabaseClient();
