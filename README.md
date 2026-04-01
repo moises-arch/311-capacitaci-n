@@ -1,20 +1,38 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Capacitación 311 - LNB (Eventum Pro)
 
-# Run and deploy your AI Studio app
+Este es un sistema integral para la gestión de capacitaciones del Centro de Atención Ciudadana 311, dirigido a directores y jefes de la Lotería Nacional de Beneficencia.
 
-This contains everything you need to run your app locally.
+## Características
 
-View your app in AI Studio: https://ai.studio/apps/5d04e965-983c-4f58-94c1-61de5373f3e2
+- **Registro de Asistencia**: Formulario dinámico con validación y confeti al registrarse.
+- **Buzón de Sugerencias**: Envío anónimo de retroalimentación sobre servicios y procesos.
+- **Catálogo de Procesos**: Visualización inteligente de procesos y estados (Remitido, En proceso, Vencido, Concluido).
+- **Panel Administrativo**: Gestión centralizada de datos con protección por clave.
+- **Reportes**: Generación de listas de asistencia para impresión.
 
-## Run Locally
+## Configuración del Backend (Supabase)
 
-**Prerequisites:**  Node.js
+El proyecto utiliza **Supabase** como backend (Proyecto: `AIG`).
 
+### Estructura de Datos
+- `attendees`: Tabla para el registro de asistencia.
+- `anonymous_feedback`: Tabla para sugerencias del buzón.
+- `services` y `processes`: Catálogo de servicios y procesos institucionales.
+- `app_settings`: Configuración global de la aplicación.
 
-1. Install dependencies:
+### Acceso Administrativo
+- **Ruta**: `/admin`
+- **Clave**: `@311`
+
+## Ejecución Local
+
+**Prerrequisitos:** Node.js
+
+1. Instalar dependencias:
    `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
+2. Configurar el archivo `.env` con las credenciales de Supabase (URL y Anon Key).
+3. Iniciar el servidor de desarrollo:
    `npm run dev`
+
+---
+Desarrollado para el Centro de Atención Ciudadana 311.
