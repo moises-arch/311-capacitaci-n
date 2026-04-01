@@ -27,7 +27,7 @@ export default function App() {
       <div className="min-h-screen bg-[#050505] text-white font-sans selection:bg-blue-500/30">
         {isRegistered && <Navbar />}
         
-        <main className={isRegistered ? "pb-24 pt-20 md:pt-28 px-4 max-w-7xl mx-auto" : ""}>
+        <main className={isRegistered ? "pb-24 pt-4 md:pt-28 px-4 max-w-7xl mx-auto" : ""}>
           <AnimatePresence mode="wait">
             <Routes>
               <Route 

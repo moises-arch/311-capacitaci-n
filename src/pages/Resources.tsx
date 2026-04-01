@@ -44,7 +44,7 @@ export default function Resources() {
       className="space-y-8"
     >
       {/* Header */}
-      <header className="py-8">
+      <header className="py-4 md:py-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Recursos del Evento</h1>
         <p className="text-zinc-500 font-light">Accede a la documentación oficial y presentaciones descargables.</p>
       </header>

@@ -31,7 +31,7 @@ export default function QRManager() {
       className="space-y-8"
     >
       {/* Header */}
-      <header className="py-8">
+      <header className="py-4 md:py-8">
         <h1 className="text-3xl font-bold tracking-tight mb-2">Gestión de Accesos QR</h1>
         <p className="text-zinc-500 font-light">Códigos oficiales para el registro y acceso a la plataforma.</p>
       </header>

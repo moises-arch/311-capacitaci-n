@@ -20,7 +20,7 @@ export default function Dashboard() {
       className="space-y-12 pb-12"
     >
       {/* Hero Section */}
-      <header className="relative py-16 px-8 rounded-[3rem] bg-gradient-to-br from-blue-600/20 to-emerald-600/10 border border-white/5 overflow-hidden">
+      <header className="relative py-8 md:py-16 px-4 md:px-8 rounded-3xl md:rounded-[3rem] bg-gradient-to-br from-blue-600/20 to-emerald-600/10 border border-white/5 overflow-hidden">
         <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
           <TrendingUp size={240} />
         </div>
