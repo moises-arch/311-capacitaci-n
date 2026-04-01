@@ -81,6 +81,25 @@ function QRCard({ title, description, qrUrl, color }: { title: string; descripti
     emerald: "bg-emerald-500/10 border-emerald-500/20 text-emerald-400",
   };
 
+  const handleDownload = async () => {
+    try {
+      const response = await fetch(qrUrl);
+      const blob = await response.blob();
+      const url = window.URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `qr-${title.toLowerCase().replace(/\s+/g, '-')}.png`;
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+      window.URL.revokeObjectURL(url);
+    } catch (err) {
+      console.error('Error downloading QR:', err);
+      // Fallback: open in new tab
+      window.open(qrUrl, '_blank');
+    }
+  };
+
   return (
     <motion.div 
       whileHover={{ y: -4 }}
@@ -107,13 +126,21 @@ function QRCard({ title, description, qrUrl, color }: { title: string; descripti
       </div>
 
       <div className="flex items-center gap-3 w-full">
-        <button className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-4 rounded-2xl transition-all flex items-center justify-center gap-2 text-sm">
+        <button 
+          onClick={handleDownload}
+          className="flex-1 bg-zinc-800 hover:bg-zinc-700 text-white font-bold py-4 rounded-2xl transition-all flex items-center justify-center gap-2 text-sm"
+        >
           <Download size={16} />
           Descargar
         </button>
-        <button className="w-14 h-14 bg-white text-black rounded-2xl flex items-center justify-center hover:bg-zinc-200 transition-all">
+        <a 
+          href={qrUrl} 
+          target="_blank" 
+          rel="noopener noreferrer"
+          className="w-14 h-14 bg-white text-black rounded-2xl flex items-center justify-center hover:bg-zinc-200 transition-all"
+        >
           <ExternalLink size={20} />
-        </button>
+        </a>
       </div>
     </motion.div>
   );
