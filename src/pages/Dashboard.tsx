@@ -47,56 +47,56 @@ export default function Dashboard() {
       </header>
 
       {/* Big Numbers */}
-      <section className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <section className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
         <motion.div 
           whileHover={{ y: -5 }}
-          className="bg-zinc-900/40 border border-white/5 p-8 rounded-[2.5rem] flex flex-col justify-between"
+          className="bg-zinc-900/40 border border-white/5 p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] flex flex-col justify-between"
         >
-          <div className="w-12 h-12 rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 mb-6">
-            <Users className="text-blue-400 w-6 h-6" />
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-blue-500/10 flex items-center justify-center border border-blue-500/20 mb-4 md:mb-6">
+            <Users className="text-blue-400 w-5 h-5 md:w-6 md:h-6" />
           </div>
           <div>
-            <div className="text-5xl font-bold tracking-tighter mb-1">{LNB_STATS.totalCases.toLocaleString()}</div>
-            <div className="text-xs font-bold uppercase tracking-widest text-zinc-500">Casos Totales</div>
+            <div className="text-2xl md:text-5xl font-bold tracking-tighter mb-1">{LNB_STATS.totalCases.toLocaleString()}</div>
+            <div className="text-[8px] md:text-xs font-bold uppercase tracking-widest text-zinc-500">Casos Totales</div>
           </div>
         </motion.div>
 
         <motion.div 
           whileHover={{ y: -5 }}
-          className="bg-zinc-900/40 border border-white/5 p-8 rounded-[2.5rem] flex flex-col justify-between"
+          className="bg-zinc-900/40 border border-white/5 p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] flex flex-col justify-between"
         >
-          <div className="w-12 h-12 rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 mb-6">
-            <CheckCircle2 className="text-emerald-400 w-6 h-6" />
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20 mb-4 md:mb-6">
+            <CheckCircle2 className="text-emerald-400 w-5 h-5 md:w-6 md:h-6" />
           </div>
           <div>
-            <div className="text-5xl font-bold tracking-tighter mb-1">98.4%</div>
-            <div className="text-xs font-bold uppercase tracking-widest text-zinc-500">Resolución</div>
+            <div className="text-2xl md:text-5xl font-bold tracking-tighter mb-1">98.4%</div>
+            <div className="text-[8px] md:text-xs font-bold uppercase tracking-widest text-zinc-500">Resolución</div>
           </div>
         </motion.div>
 
         <motion.div 
           whileHover={{ y: -5 }}
-          className="bg-zinc-900/40 border border-white/5 p-8 rounded-[2.5rem] flex flex-col justify-between"
+          className="bg-zinc-900/40 border border-white/5 p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] flex flex-col justify-between"
         >
-          <div className="w-12 h-12 rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 mb-6">
-            <Activity className="text-amber-400 w-6 h-6" />
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-amber-500/10 flex items-center justify-center border border-amber-500/20 mb-4 md:mb-6">
+            <Activity className="text-amber-400 w-5 h-5 md:w-6 md:h-6" />
           </div>
           <div>
-            <div className="text-5xl font-bold tracking-tighter mb-1">{REAL_CASES.length}</div>
-            <div className="text-xs font-bold uppercase tracking-widest text-zinc-500">Casos en Proceso</div>
+            <div className="text-2xl md:text-5xl font-bold tracking-tighter mb-1">{REAL_CASES.length}</div>
+            <div className="text-[8px] md:text-xs font-bold uppercase tracking-widest text-zinc-500">Casos en Proceso</div>
           </div>
         </motion.div>
 
         <motion.div 
           whileHover={{ y: -5 }}
-          className="bg-zinc-900/40 border border-white/5 p-8 rounded-[2.5rem] flex flex-col justify-between"
+          className="bg-zinc-900/40 border border-white/5 p-5 md:p-8 rounded-3xl md:rounded-[2.5rem] flex flex-col justify-between"
         >
-          <div className="w-12 h-12 rounded-2xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20 mb-6">
-            <Clock className="text-purple-400 w-6 h-6" />
+          <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-purple-500/10 flex items-center justify-center border border-purple-500/20 mb-4 md:mb-6">
+            <Clock className="text-purple-400 w-5 h-5 md:w-6 md:h-6" />
           </div>
           <div>
-            <div className="text-5xl font-bold tracking-tighter mb-1">24h</div>
-            <div className="text-xs font-bold uppercase tracking-widest text-zinc-500">Tiempo Remisión</div>
+            <div className="text-2xl md:text-5xl font-bold tracking-tighter mb-1">24h</div>
+            <div className="text-[8px] md:text-xs font-bold uppercase tracking-widest text-zinc-500">Tiempo Remisión</div>
           </div>
         </motion.div>
       </section>
